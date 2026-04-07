@@ -1,0 +1,26 @@
+{
+  "name": "webdevbootcamp-capstone5-booknotes",
+  "version": "1.0.0",
+  "description": "Capstone project 5 from Web Dev Bootcamp Course",
+  "homepage": "https://github.com/briansalazar-tech/WebDevBootcamp-Capstone5-BookNotes#readme",
+  "bugs": {
+    "url": "https://github.com/briansalazar-tech/WebDevBootcamp-Capstone5-BookNotes/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briansalazar-tech/WebDevBootcamp-Capstone5-BookNotes.git"
+  },
+  "license": "ISC",
+  "author": "Brian Salazar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.14.0",
+    "dotenv": "^17.4.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1"
+  }
+}
