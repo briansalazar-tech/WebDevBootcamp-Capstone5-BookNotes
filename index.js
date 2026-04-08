@@ -7,8 +7,18 @@ const port = 3000;
 
 dotenv.config();
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
     res.render("index.ejs");
+})
+
+app.get("/add", (req, res) => {
+    res.render("add.ejs");
+})
+
+app.get("/edit", (req, res) => {
+    res.render("edit.ejs");
 })
 
 app.listen(port, () => {

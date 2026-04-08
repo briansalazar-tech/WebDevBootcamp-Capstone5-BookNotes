@@ -1,11 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Hello World
-</body>
+<%- include ("partials/header.ejs") %>
+    <!-- Content -->
+    <section id="content">
+      <div class="container py-3 px-2">
+        <h1>Books and Thoughts 📚</h1>
+        <hr>
+        <h2>Book Title</h2>
+        <img style="margin-bottom: 20px;" src="/images/Sample-Cover.jpg">
+        <p>Recommendation Score: SCORE/10 - Completed on DATE</p>
+        <p>SUMMARY</p>
+        <p><a href="/edit">Edit</a> - <a href="#">Delete</a></p>
+        <hr>
+      </div>
+    </section>
+    <!-- Footer -->
+    <section id="Footer">
+      <div class="container">
+        <footer
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+        >
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary"
+              >© <%= new Date().getFullYear() %> Brian's Book Notes</span
+            >
+          </div>
+        </footer>
+      </div>
+    </section>
+  </body>
 </html>
