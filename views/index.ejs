@@ -4,12 +4,17 @@
       <div class="container py-3 px-2">
         <h1>Books and Thoughts 📚</h1>
         <hr>
-        <h2>Book Title</h2>
-        <img style="margin-bottom: 20px;" src="/images/Sample-Cover.jpg">
-        <p>Recommendation Score: SCORE/10 - Completed on DATE</p>
-        <p>SUMMARY</p>
+        <% data.forEach((item) => { %>
+        <!-- Place Inside For Loop -->
+        <h2><%- item.title %></h2>
+        <img style="margin-bottom: 20px;" src="<%- item.cover %>">
+        <p>Recommendation Score: <%- item.score %>/10 - Completed on <%- item.date %></p>
+        <p><%- item.summary %></p>
         <p><a href="/edit">Edit</a> - <a href="#">Delete</a></p>
         <hr>
+        <!-- Place Inside For Loop -->
+        <% }) %>
+
       </div>
     </section>
     <!-- Footer -->
