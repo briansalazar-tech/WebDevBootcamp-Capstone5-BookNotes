@@ -5,7 +5,7 @@
         <h1>Add Entry ➕</h1>
         <hr>
         <!-- Add New Entry Form -->
-        <form>
+        <form action="/submitNew" method="POST">
         <!-- Book Title -->
         <div class="mb-3">
             <label class="form-label">Book Title</label>
@@ -24,11 +24,11 @@
             <input type="text" 
             placeholder="Ex. OL33225306M" 
             class="form-control"
-            name="olid-number"
+            name="number"
             />
             <div class="form-text">
             Only enter the OLID number in field. To get value search the
-            <a href="https://openlibrary.org/">Open Library</a> database.
+            <a href="https://openlibrary.org/" target="_blank" rel="noopener noreferrer">Open Library</a> database.
             </div>
         </div>
         <!-- Readers Score -->
