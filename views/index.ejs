@@ -10,7 +10,7 @@
         <img style="margin-bottom: 20px;" src="<%- item.cover %>">
         <p>Recommendation Score: <%- item.score %>/10 - Completed on <%- item.date %></p>
         <p><%- item.summary %></p>
-        <p><a href="/edit">Edit</a> - <a href="#">Delete</a></p>
+        <p><a href="/editentry/<%- item.id %>">Edit/Delete</a></p>
         <hr>
         <!-- Place Inside For Loop -->
         <% }) %>

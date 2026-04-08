@@ -5,7 +5,7 @@
         <h1>Edit Entry 🛠️</h1>
         <hr>
         <!-- Edit Entry Form -->
-        <form>
+        <form action="/updateEntry/<%- entry.id %>" method="POST">
         <!-- Book Title -->
         <div class="mb-3">
             <label class="form-label">Book Title</label>
@@ -14,7 +14,7 @@
             class="form-control"
             placeholder="Title of book read"
             name="title"
-            value="DATA"
+            value="<%- entry.title %>"
             />
         </div>
         <!-- OLID Number -->
@@ -25,8 +25,8 @@
             <input type="text" 
             placeholder="Ex. OL33225306M" 
             class="form-control"
-            name="olid-number"
-            value="DATA"
+            name="number"
+            value="<%- entry.olid %>"
             />
             <div class="form-text">
             Only enter the OLID number in field. To get value search the
@@ -42,18 +42,19 @@
             type="number"
             class="form-control"
             name="score"
-            value="000"
+            value="<%- entry.score %>"
             />
         </div>
         <!-- Date of Completion -->
         <div class="mb-3">
         <label class="form-label"
-            >Date Completed</label
+            >Date Completed (YYYY-MM-DD)</label
         >
         <input
-            type="date"
+            type="text"
             class="form-control"
             name="date"
+            value="<%- entry.date %>"
         />
         </div>
         <!-- Readers Thoughts -->
@@ -68,9 +69,13 @@
                 type="text"
                 name="summary"
                 placeholder="Your Thoughts..."
-            >DATA</textarea>
+            ><%- entry.summary %></textarea>
         </div>
         <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+        </form>
+        <!-- Delete Entry -->
+        <form action="/delete/<%- entry.id %>" method="POST">
+          <button type="submit" class="btn btn-danger my-2" value="Submit">Delete</button>
         </form>
       </div>
     </section>

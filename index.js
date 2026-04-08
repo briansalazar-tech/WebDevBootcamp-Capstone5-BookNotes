@@ -62,6 +62,7 @@ app.get("/add", (req, res) => {
 // Add new entry
 app.post("/submitNew", (req, res) => {
     try {
+        // Construct new entry
         var imgURL = `https://covers.openlibrary.org/b/olid/${req.body.number}-M.jpg`
         var newEntry = {
             id: data.length + 1,
@@ -81,9 +82,41 @@ app.post("/submitNew", (req, res) => {
     }
 })
 
-app.get("/edit", (req, res) => {
-    res.render("edit.ejs");
+app.get("/editentry/:entryroute", (req, res) => {
+    var entry = data.find((entry) => entry.id == req.params.entryroute);
+    res.render("edit.ejs", {entry: entry});
 });
+
+app.post("/updateEntry/:entryroute", (req, res) => {
+    try {
+        // Construct replacement entry
+        var imgURL = `https://covers.openlibrary.org/b/olid/${req.body.number}-M.jpg`
+        var updatedEntry = {
+                id: req.params.entryroute,
+                title: req.body.title,
+                olid: req.body.number,
+                cover: imgURL,
+                score: req.body.score,
+                date: req.body.date,
+                summary: req.body.summary
+            };
+        // Replace existing entry with new entry
+        const searchIndex = data.findIndex((entry) => entry.id == updatedEntry.id);
+        data[searchIndex] = updatedEntry;
+
+        res.redirect("/")
+    } catch (error) {
+        console.error(error);
+    };
+})
+
+app.post("/delete/:entryroute", (req, res) => {
+    console.log(req.params.entryroute);
+    const searchIndex = data.findIndex((entry) => entry.id == req.params.entryroute);
+    data.splice(searchIndex, 1);
+    console.log(data)
+    res.redirect("/")
+})
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
