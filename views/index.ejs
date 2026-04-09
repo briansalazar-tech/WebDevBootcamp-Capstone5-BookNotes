@@ -7,8 +7,8 @@
         <% data.forEach((item) => { %>
         <!-- Place Inside For Loop -->
         <h2><%- item.title %></h2>
-        <img style="margin-bottom: 20px;" src="<%- item.cover %>">
-        <p>Recommendation Score: <%- item.score %>/10 - Completed on <%- item.date %></p>
+        <img style="margin-bottom: 20px;" src="<%- item.cover_url %>">
+        <p>Recommendation Score: <%- item.score %>/10 - Completed on <%- item.date_read %></p>
         <p><%- item.summary %></p>
         <p><a href="/editentry/<%- item.id %>">Edit/Delete</a></p>
         <hr>
